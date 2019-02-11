@@ -14,7 +14,7 @@ private fun Int.roll() = (0 until this)
         .sum()
         .toString()
 
-private val firstName = listOf("Eli, Alex, Sophie")
+private val firstName = listOf("Eli", "Alex", "Sophie")
 private val lastName = listOf("Lightwear", "Greatfoot", "Oakeanfield")
 
 object CharacterGenerator {
@@ -26,7 +26,7 @@ object CharacterGenerator {
 
     private fun name() = "${firstName.rand()} ${lastName.rand()}"
 
-    private fun race() = listOf("dwarf", "elf", "human", "halflin").rand()
+    private fun race() = listOf("dwarf", "elf", "human", "halfling").rand()
 
     private fun dex() = 4.roll()
 
