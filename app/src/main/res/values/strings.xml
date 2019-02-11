@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Samodelkin</string>
+
+    <string name="name">Name</string>
+    <string name="race">Race</string>
+    <string name="stats">Stats</string>
+    <string name="wisdom">Wisdom</string>
+    <string name="strength">Strength</string>
+    <string name="dexterity">Dexterity</string>
+    <string name="generate">Generate</string>
 </resources>
