@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 
 class NewCharacterActivity : AppCompatActivity() {
+    private var characterData = CharacterGenerator.generate()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

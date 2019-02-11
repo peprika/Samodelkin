@@ -17,7 +17,7 @@ private fun Int.roll() = (0 until this)
 private val firstName = listOf("Eli, Alex, Sophie")
 private val lastName = listOf("Lightwear", "Greatfoot", "Oakeanfield")
 
-object characterGenerator {
+object CharacterGenerator {
     data class CharacterData(val name: String,
                              val race: String,
                              val dex: String,
