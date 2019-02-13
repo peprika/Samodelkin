@@ -11,6 +11,10 @@ class NewCharacterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_character)
 
+        generateButton.setOnClickListener {
+            characterData = CharacterGenerator.generate()
+            displayCharacterData()
+        }
         displayCharacterData()
     }
 
