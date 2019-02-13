@@ -26,7 +26,7 @@ object CharacterGenerator {
 
     private fun name() = "${firstName.rand()} ${lastName.rand()}"
 
-    private fun race() = listOf("dwarf", "elf", "human", "halfling").rand()
+    private fun race() = listOf("Dwarf", "Elf", "Human", "Halfling").rand()
 
     private fun dex() = 4.roll()
 
