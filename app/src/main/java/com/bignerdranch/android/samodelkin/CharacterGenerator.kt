@@ -1,5 +1,7 @@
 package com.bignerdranch.android.samodelkin
 
+import java.io.Serializable
+
 /**
  * Created by Riku Pepponen on 11.2.2019.
  * (riku.pepponen@gmail.com)
@@ -22,7 +24,7 @@ object CharacterGenerator {
                              val race: String,
                              val dex: String,
                              val wis: String,
-                             val str: String)
+                             val str: String) : Serializable
 
     private fun name() = "${firstName.rand()} ${lastName.rand()}"
 
