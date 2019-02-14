@@ -26,7 +26,7 @@ class NewCharacterActivity : AppCompatActivity() {
             CharacterGenerator.generate()
 
         generateButton.setOnClickListener {
-            characterData = CharacterGenerator.fromApiData("Halflin,Lars Kizzy,14,13,8")
+            characterData = CharacterGenerator.fetchCharacterData()
             displayCharacterData()
         }
         displayCharacterData()
