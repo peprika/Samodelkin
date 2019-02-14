@@ -2,12 +2,12 @@ package com.bignerdranch.android.samodelkin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import kotlinx.android.synthetic.main.activity_new_character.*
+import kotlinx.coroutines.*
 
 private const val CHARACTER_DATA_KEY = "CHARACTER_DATA_KEY"
 
-private  var Bundle.characterData
+private var Bundle.characterData
     get() = getSerializable(CHARACTER_DATA_KEY) as CharacterGenerator.CharacterData
     set(value) = putSerializable(CHARACTER_DATA_KEY, value)
 
@@ -26,8 +26,10 @@ class NewCharacterActivity : AppCompatActivity() {
             CharacterGenerator.generate()
 
         generateButton.setOnClickListener {
-            characterData = CharacterGenerator.fetchCharacterData()
+            GlobalScope.launch(Dispatchers.Main) {
+            characterData = CharacterGenerator.fetchCharacterData().await()
             displayCharacterData()
+            }
         }
         displayCharacterData()
     }

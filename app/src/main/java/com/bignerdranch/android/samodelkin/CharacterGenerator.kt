@@ -1,5 +1,8 @@
 package com.bignerdranch.android.samodelkin
 
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import java.io.Serializable
 import java.net.URL
 
@@ -50,8 +53,10 @@ object CharacterGenerator {
         return CharacterData(name, race, dex, wis, str)
     }
 
-    fun fetchCharacterData(): CharacterGenerator.CharacterData {
-        val apiData = URL(CHARACTER_DATA_API).readText()
-        return CharacterGenerator.fromApiData(apiData)
+    fun fetchCharacterData(): Deferred<CharacterGenerator.CharacterData> {
+        return GlobalScope.async {
+            val apiData = URL(CHARACTER_DATA_API).readText()
+            CharacterGenerator.fromApiData(apiData)
+        }
     }
 }
