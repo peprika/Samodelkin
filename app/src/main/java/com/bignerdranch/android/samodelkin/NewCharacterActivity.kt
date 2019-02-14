@@ -36,8 +36,8 @@ class NewCharacterActivity : AppCompatActivity() {
 
     private fun displayCharacterData() {
         characterData.run {
-            nameTextView.text = name
-            raceTextView.text = race
+            nameTextView.text = name.capitalize()
+            raceTextView.text = race.capitalize()
             dexterityTextView.text = dex
             wisdomTextView.text = wis
             strengthTextView.text = str
